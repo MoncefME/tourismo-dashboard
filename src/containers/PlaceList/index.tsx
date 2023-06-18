@@ -11,6 +11,7 @@ import { usePlaces } from "@/store/places.store";
 import { notify } from "@/utils/notify";
 import { Button } from "@mantine/core";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { TableColumn } from "react-data-table-component";
 
@@ -34,6 +35,7 @@ const COLUMNS: TableColumn<getPlacesResponseBody[number]>[] = [
 ];
 
 const PlaceListContainer = () => {
+  const router = useRouter();
   const { getPlaces, places, isLoading } = usePlaces();
   useEffect(() => {
     getPlaces().catch((e) =>
@@ -59,7 +61,13 @@ const PlaceListContainer = () => {
           </Button>
         </ContainerHeader>
         <ContainerBody loading={isLoading}>
-          <DataTable data={places} columns={COLUMNS} />
+          <DataTable
+            data={places}
+            columns={COLUMNS}
+            onRowClick={(row) =>
+              router.push(ROUTES.PLACE_BY_ID.pathname.replace("[id]", row.id))
+            }
+          />
         </ContainerBody>
       </Container>
     </div>

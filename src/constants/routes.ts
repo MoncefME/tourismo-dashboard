@@ -47,10 +47,26 @@ export const ROUTES  = {
         forSuperUser : true,
         forNormalUser : true,
         Icon : ICONS.PLACE
+    },
+    COMMENTS: { 
+        title : "Validate Comments",
+        pathname : "/comments",
+        forSuperUser: true,
+        forNormalUser: true,
+        Icon : ICONS.COMMENT_CHECKED
+    },
+    PLACE_BY_ID: {
+        title: "Place Details",
+        pathname: "/places/[id]",
+        forSuperUser: true,
+        forNormalUser: true,
+        Icon: ICONS.PLACE
     }
 } satisfies Record<string,Route>
 
 export const navbar_elems = [
     ROUTES.HOME,
     ROUTES.ADMINS,
-    ROUTES.PLACES]
+    ROUTES.PLACES,
+    ROUTES.COMMENTS
+]

@@ -55,5 +55,19 @@ export const placeService = {
                 }
             })
         })
-    }
+    },
+    getPlaceById: async (placeId: number,token: string) => {
+        return await axios.get(`https://tourismo-api.onrender.com/places/${placeId}`,{
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+    },
+    getStatsByPlaceId:  async (placeId: number,token: string) => {
+        return await axios.get(`https://tourismo-api.onrender.com/places/${placeId}/stats/`,{
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+    },
 }

@@ -7,17 +7,20 @@ import {
   FiEyeOff,
   FiMapPin,
 } from "react-icons/fi";
-import {BiLocationPlus} from "react-icons/bi"
+import {
+  BiLocationPlus,
+  BiCommentCheck
+} from "react-icons/bi"
 
 export const ICONS = {
-    HOME: FiHome,
-    ADMINS: FiUsers,
-    CREATE_ADMIN: FiUserPlus,
-    LOGOUT: FiLogOut,
-    
+  HOME: FiHome,
+  ADMINS: FiUsers,
+  CREATE_ADMIN: FiUserPlus,
+  LOGOUT: FiLogOut,
   EYE_ON: FiEye,
   EYE_OFF: FiEyeOff,
   PLACE:FiMapPin,
-  ADD_PLACE : BiLocationPlus
+  ADD_PLACE : BiLocationPlus,
+  COMMENT_CHECKED :BiCommentCheck
 
 }
